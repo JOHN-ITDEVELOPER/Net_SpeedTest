@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speed Test Pro</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="app-header">
+            <div class="logo">
+                <i class="fas fa-tachometer-alt"></i>
+                <h1>Speed Test Pro</h1>
+            </div>
+            <p class="subtitle">Measure your internet connection's speed accurately.</p>
+        </header>
+
+        <main class="speed-test-container">
+            <div class="test-card">
+                <div class="card-header">
+                    <h2>Live Test</h2>
+                    <div class="connection-status">
+                        <i class="fas fa-wifi"></i>
+                        <span>Online</span>
+                    </div>
+                </div>
+
+                <div class="test-content">
+                    <div class="speed-display">
+                        <div class="speed-value">
+                            <span id="speedResult">--.--</span>
+                            <span class="speed-unit">Mbps</span>
+                        </div>
+                        <div class="speed-label">Download Speed</div>
+                    </div>
+
+                    <!-- Final Summary Display (hidden by default) -->
+                    <div class="final-speed-summary" style="display: none;">
+                        <div class="summary-item">
+                            <div class="summary-label"><i class="fas fa-arrow-down"></i> Download</div>
+                            <div class="summary-value" id="summaryDownloadSpeed">--.-- Mbps</div>
+                        </div>
+                        <div class="summary-item">
+                            <div class="summary-label"><i class="fas fa-arrow-up"></i> Upload</div>
+                            <div class="summary-value" id="summaryUploadSpeed">--.-- Mbps</div>
+                        </div>
+                    </div>
+
+                    <div class="progress-container">
+                        <div class="progress-info">
+                            <span id="testStatus">Ready</span>
+                            <span id="progressPercentage">0%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div id="progressFill" class="progress-fill"></div>
+                        </div>
+                    </div>
+
+                    <div class="test-details">
+                        <div class="detail-item">
+                            <i class="fas fa-file-alt"></i>
+                            <div>
+                                <div class="detail-label">File Size</div>
+                                <div id="fileSize" class="detail-value">0 MB</div>
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <div class="detail-label">Time Elapsed</div>
+                                <div id="timeElapsed" class="detail-value">0.0s</div>
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-exchange-alt"></i>
+                            <div>
+                                <div class="detail-label">Data Transferred</div>
+                                <div id="dataTransferred" class="detail-value">0 MB</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="test-controls">
+                        <button id="startTest" class="btn-primary">
+                            <i class="fas fa-play"></i>
+                            Start Speed Test
+                        </button>
+                        <button id="resetTest" class="btn-secondary">
+                            <i class="fas fa-redo"></i>
+                            Reset
+                        </button>
+                    </div>
+
+                    <div class="test-info">
+                        <i class="fas fa-info-circle"></i>
+                        <p>Click "Start Speed Test" to begin measuring your download and upload speeds.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="results-card">
+                <h3>Test Summary</h3>
+                <div class="results-content">
+                    <div class="result-item">
+                        <span class="result-label">Download Speed:</span>
+                        <span id="finalSpeed" class="result-value">--.-- Mbps</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Upload Speed:</span>
+                        <span id="finalUploadSpeed" class="result-value">--.-- Mbps</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Total Time:</span>
+                        <span id="totalTime" class="result-value">--.-- s</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Test Date:</span>
+                        <span id="testDate" class="result-value">--</span>
+                    </div>
+                </div>
+                
+                <div class="speed-categories">
+                    <h4>What do these speeds mean?</h4>
+                    <div class="categories">
+                        <div class="category poor"><strong>Poor</strong> (0-5 Mbps)</div>
+                        <div class="category average"><strong>Average</strong> (5-25 Mbps)</div>
+                        <div class="category good"><strong>Good</strong> (25-100 Mbps)</div>
+                        <div class="category excellent"><strong>Excellent</strong> (100+ Mbps)</div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="app-footer">
+            <p>Powered by reliable public test servers. Results may vary based on network conditions.</p>
+            <p class="copyright">&copy; 2024 Speed Test Pro. All Rights Reserved.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
