@@ -136,10 +136,14 @@
 
         <footer class="app-footer">
             <p>Powered by reliable public test servers. Results may vary based on network conditions.</p>
-            <p class="copyright">&copy; 2024 Speed Test Pro. All Rights Reserved.</p>
+            <p class="copyright">&copy; <span id="copyrightYear"></span> Speed Test Pro. All Rights Reserved.</p>
         </footer>
     </div>
 
     <script src="script.js"></script>
+    <script>
+        // Update copyright year dynamically
+        document.getElementById('copyrightYear').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>
